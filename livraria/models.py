@@ -16,19 +16,18 @@ class Editora(models.Model):
 
     def __str__(self):
         return self.nome
-
-
+    
 class Autor(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=255)
+    cpf = models.PositiveBigIntegerField(max_length=11)
     email = models.EmailField(null=True, blank=True)
 
     def __str__(self):
         return self.nome
-
+    
     class Meta:
         verbose_name = "Autor"
-        verbose_name_plural = "Autores"
-
+        verbose_name_plural = "Autors"
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=255)
