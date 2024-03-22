@@ -19,7 +19,6 @@ class Editora(models.Model):
     
 class Autor(models.Model):
     nome = models.CharField(max_length=255)
-    cpf = models.PositiveBigIntegerField(max_length=11)
     email = models.EmailField(null=True, blank=True)
 
     def __str__(self):
