@@ -9,7 +9,6 @@ class Categoria(models.Model):
     def __str__(self):
         return self.descricao
 
-
 class Editora(models.Model):
     nome = models.CharField(max_length=100)
     site = models.URLField(null=True, blank=True)
@@ -19,15 +18,14 @@ class Editora(models.Model):
     
 class Autor(models.Model):
     nome = models.CharField(max_length=255)
-    cpf = models.PositiveBigIntegerField(max_length=11)
     email = models.EmailField(null=True, blank=True)
 
     def __str__(self):
         return self.nome
     
     class Meta:
-        verbose_name = "Autor"
-        verbose_name_plural = "Autors"
+        verbose_name = "autor"
+        verbose_name_plural = "autors"
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=255)
@@ -41,5 +39,8 @@ class Livro(models.Model):
 
     categoria = models.ForeignKey(
         Categoria, on_delete=models.PROTECT, related_name="livros")
+    
     editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name="livros")
+    
+    autores = models.ManyToManyField(Autor, related_name="livros")

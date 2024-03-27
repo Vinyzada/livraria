@@ -26,7 +26,6 @@ class LivroViewSet(ModelViewSet):
             return LivroListSerializer
         return LivroSerializer
 
-
 class AutorViewSet(ModelViewSet):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializer

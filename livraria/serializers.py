@@ -14,7 +14,7 @@ class EditoraSerializer(ModelSerializer):
         model = Editora
         fields = "__all__"
 
-# Autores
+#Autores
 class AutorSerializer(ModelSerializer):
     class Meta:
         model = Autor
