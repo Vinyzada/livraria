@@ -7,9 +7,11 @@ from livraria.serializers import CategoriaSerializer, EditoraSerializer, AutorSe
 
 # Create your views here.
 
+
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
+
 
 class EditoraViewSet(ModelViewSet):
     queryset = Editora.objects.all()
@@ -25,6 +27,7 @@ class LivroViewSet(ModelViewSet):
         elif self.action == "retrive":
             return LivroListSerializer
         return LivroSerializer
+
 
 class AutorViewSet(ModelViewSet):
     queryset = Autor.objects.all()
