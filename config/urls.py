@@ -20,13 +20,15 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from livraria.views import CategoriaViewSet, EditoraViewSet, AutorViewSet, LivroViewSet
+from livraria.views import CategoriaViewSet, EditoraViewSet, AutorViewSet, LivroViewSet, UsuarioViewSet
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"editoras", EditoraViewSet)
 router.register(r"livros", LivroViewSet)
 router.register(r"autores", AutorViewSet)
+router.register(r"usuarios", UsuarioViewSet)
+
 
 urlpatterns = [
     path("api/media/", include(uploader_router.urls)),

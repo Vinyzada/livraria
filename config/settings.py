@@ -24,26 +24,27 @@ MODE = os.getenv("MODE")
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False")
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000","http://localhost:8000", "https://*.fl0.io/"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000",
+                        "http://localhost:8000", "https://*.fl0.io/"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    "django.contrib.admin",
     'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "cloudinary_storage",
+    "cloudinary",
     "corsheaders",
     "rest_framework",
     "rest_framework_simplejwt",
+    "drf_spectacular",
     "usuario",
     "uploader",
-    "drf_spectacular",
     "livraria",
 ]
 

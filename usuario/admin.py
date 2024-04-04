@@ -29,6 +29,7 @@ class CustomUserAdmin(UserAdmin):
                 "fields": (
                     "first_name",
                     "last_name",
+                    "foto",
                 )
             },
         ),
@@ -38,7 +39,8 @@ class CustomUserAdmin(UserAdmin):
         ),
         (
             _("Permissions"),
-            {"fields": ("is_staff", "is_active", "groups", "user_permissions")},
+            {"fields": ("is_staff", "is_active",
+                        "groups", "user_permissions")},
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
