@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-k(^ib$9n!yo2n6&f-b3ka4q01v8l^0@+(tx4p+^28ukqau-=in
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '*']
 
 #
 
@@ -24,8 +24,8 @@ MODE = os.getenv("MODE")
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False")
-ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://*.fl0.io/"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000",
+                        "http://localhost:8000", "https://*.fl0.io/"]
 
 
 # Application definition
@@ -181,4 +181,3 @@ else:
 if MODE == "PRODUCTION":
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
